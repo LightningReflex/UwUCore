@@ -18,7 +18,7 @@ fun fetchSkull(offlinePlayer: OfflinePlayer, getSkull: (ItemStack) -> Unit) {
     getSkull.invoke(skull)
 }
 
-fun getSkullFromBsae64(base64: String) : ItemStack {
+fun getSkullFromBase64(base64: String) : ItemStack {
 
     val skull = ItemStack(Material.PLAYER_HEAD)
     val meta = skull.itemMeta as SkullMeta
@@ -39,7 +39,7 @@ fun getSkullFromBsae64(base64: String) : ItemStack {
 fun getSkullFromURL(url: String) : ItemStack {
 
     val b64 = Base64.getEncoder().encodeToString("{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/${stripTextureForApi(url)}\"}}}".toByteArray())
-    return getSkullFromBsae64(b64)
+    return getSkullFromBase64(b64)
 
 }
 

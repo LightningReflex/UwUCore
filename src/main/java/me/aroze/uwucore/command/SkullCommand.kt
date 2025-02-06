@@ -27,7 +27,7 @@ object SkullCommand : CommandExecutor {
             if (args.isNotEmpty() && args[0].length > 16) {
 
                 if (validateTextureBase64(args[0], true)) {
-                    player.inventory.addItem(getSkullFromBsae64(args[0]))
+                    player.inventory.addItem(getSkullFromBase64(args[0]))
                     sender.sendFinalColoured("&pWe've generated a &s${typedCommand.lowercase()}&p from your &stexture string&p, :D")
                     return@async
                 }
